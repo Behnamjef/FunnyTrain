@@ -535,6 +535,8 @@ MonoBehaviour:
     shown: 0
   - name: RoadMeshCreator
     shown: 0
+  - name: Passenger
+    shown: 0
   - name: Train
     shown: 0
   - name: Wagon
@@ -542,6 +544,8 @@ MonoBehaviour:
   - name: WagonHolder
     shown: 0
   - name: WagonsMover
+    shown: 0
+  - name: GizmozDrawer
     shown: 0
   - name: Button
     shown: 0
