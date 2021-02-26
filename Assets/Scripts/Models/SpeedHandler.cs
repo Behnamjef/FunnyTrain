@@ -12,11 +12,13 @@ public class SpeedHandler : MonoBehaviour
 
     private Transform locomotive;
     private InputHandler inputHandler;
+    private Fuel fuel;
 
     void Start()
     {
         locomotive = GetComponent<WagonHolder>().GetWagons()[0].transform;
         inputHandler = GetComponent<InputHandler>();
+        fuel = GetComponent<Fuel>();
     }
 
     void Update()
@@ -29,7 +31,8 @@ public class SpeedHandler : MonoBehaviour
         var value = locomotive.eulerAngles.x;
         if (value > 180)
             value -= 360;
-        speed += value / (20 / gravityEffect) + (inputHandler.isTouching ? motorPower : 0);
+        var powerOfMotor = inputHandler.isTouching && !fuel.IsEmpty() ? motorPower : 0;
+        speed += value / (20 / gravityEffect) + powerOfMotor;
         speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
     }
 }

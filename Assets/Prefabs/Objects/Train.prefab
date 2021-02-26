@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 7549204503162237411}
   - component: {fileID: 7549204503162237410}
   - component: {fileID: 7549204503162237409}
+  - component: {fileID: 8532385126380610501}
+  - component: {fileID: 4589798024407257931}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -76,11 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9661583d1c59e42e0944eece060d6967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wagonDistance: 3
+  wagonDistance: 17.3
   locomotivePrefab: {fileID: 9202879367591459715, guid: 08ac515aec4124b52a50c3f9db838b6d, type: 3}
   wagonPrefab: {fileID: 3189443126279627729, guid: 6ff238c0d34df48129a3d7dc209cc52d, type: 3}
   wagons:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -110,5 +111,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 0}
   endOfPathInstruction: 0
-  speed: 10
+  speedHandler: {fileID: 8532385126380610501}
   distanceTravelled: 0
+--- !u!114 &8532385126380610501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549204503162237408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20f6bb9a032444b9a14a91db546d64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  maxSpeed: 80
+  gravityEffect: 0.3
+  motorPower: 0.15
+--- !u!114 &4589798024407257931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549204503162237408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1817c1766804b92b77d3984fe08cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouching: 0
