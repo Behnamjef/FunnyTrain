@@ -1,13 +1,11 @@
-﻿using System;
-using System.Linq;
-using PathCreation;
+﻿using PathCreation;
 using UnityEngine;
 
 public class WagonsMover : MonoBehaviour
 {
     [SerializeField] private PathCreator pathCreator;
     [SerializeField] private EndOfPathInstruction endOfPathInstruction;
-    [SerializeField] private float speed = 5;
+    [SerializeField] private SpeedHandler speedHandler;
     [SerializeField] private float distanceTravelled;
 
     private WagonHolder wagonHolder;
@@ -26,7 +24,7 @@ public class WagonsMover : MonoBehaviour
     {
         if (pathCreator == null) return;
 
-        distanceTravelled += speed * Time.deltaTime;
+        distanceTravelled += speedHandler.speed * Time.deltaTime;
 
         for (var i = 0; i < wagonHolder.GetWagons().Count; i++)
         {
@@ -40,7 +38,7 @@ public class WagonsMover : MonoBehaviour
 
     public float GetSpeed()
     {
-        return speed;
+        return speedHandler.speed;
     }
 
     public PathCreator GetPath()

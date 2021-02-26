@@ -541,6 +541,8 @@ MonoBehaviour:
     shown: 0
   - name: Passenger
     shown: 0
+  - name: SpeedHandler
+    shown: 0
   - name: Train
     shown: 0
   - name: Wagon
