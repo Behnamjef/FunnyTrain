@@ -37,4 +37,14 @@ public class WagonsMover : MonoBehaviour
             wagon.SetPositionAndRotation(position, rotation);
         }
     }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public PathCreator GetPath()
+    {
+        return pathCreator;
+    }
 }

@@ -535,6 +535,10 @@ MonoBehaviour:
     shown: 0
   - name: RoadMeshCreator
     shown: 0
+  - name: LookAtObject
+    shown: 0
+  - name: MovingOnRail
+    shown: 0
   - name: Passenger
     shown: 0
   - name: Train

@@ -4,16 +4,10 @@ using System.Collections.Generic;
 using Sirenix.Utilities;
 using UnityEngine;
 
-public class Wagon : MonoBehaviour
+public class Wagon : MovingOnRail
 {
     [SerializeField] private List<Transform> sits;
     private bool CanPickUpPassenger => !sits.IsNullOrEmpty();
-
-    public void SetPositionAndRotation(Vector3 pos, Quaternion rot)
-    {
-        transform.position = pos;
-        transform.eulerAngles = rot.eulerAngles + (Vector3.forward * 90);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
