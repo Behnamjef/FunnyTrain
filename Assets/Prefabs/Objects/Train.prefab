@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8268641864706750489}
+  - component: {fileID: 128865558506440657}
   m_Layer: 0
   m_Name: LookAt
   m_TagString: Untagged
@@ -24,12 +25,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389834285474244055}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 32.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7549204503162237412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128865558506440657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389834285474244055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa58c8afd49346aebd37bf5498b0e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wagonsMover: {fileID: 7549204503162237409}
+  distanceTravelled: 0
 --- !u!1 &7549204503162237408
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +59,7 @@ GameObject:
   - component: {fileID: 7549204503162237409}
   - component: {fileID: 8532385126380610501}
   - component: {fileID: 4589798024407257931}
+  - component: {fileID: 6254865467924497859}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -125,10 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20f6bb9a032444b9a14a91db546d64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 0
   maxSpeed: 80
   gravityEffect: 0.3
   motorPower: 0.15
+  friction: 0.01
 --- !u!114 &4589798024407257931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +159,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTouching: 0
+--- !u!114 &6254865467924497859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549204503162237408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499a06decfac340a29d20b0fa2b3cd9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  maxAmount: 10
+  fuelBarImage: {fileID: 0}

@@ -9,6 +9,7 @@ public class SpeedHandler : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [Range(0.001f, 2)] [SerializeField] private float gravityEffect;
     [Range(0, 2)] [SerializeField] private float motorPower;
+    [Range(0.001f, 1)] [SerializeField] private float friction;
 
     private Transform locomotive;
     private InputHandler inputHandler;
@@ -32,7 +33,7 @@ public class SpeedHandler : MonoBehaviour
         if (value > 180)
             value -= 360;
         var powerOfMotor = inputHandler.isTouching && !fuel.IsEmpty() ? motorPower : 0;
-        speed += value / (20 / gravityEffect) + powerOfMotor;
+        speed += value / (20 / gravityEffect) + powerOfMotor - Mathf.Sign(speed) * friction;
         speed = Mathf.Clamp(speed, -maxSpeed, maxSpeed);
     }
 }

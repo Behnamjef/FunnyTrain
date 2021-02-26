@@ -4,15 +4,15 @@ using UnityEngine;
 public class WagonsMover : MonoBehaviour
 {
     [SerializeField] private PathCreator pathCreator;
-    [SerializeField] private EndOfPathInstruction endOfPathInstruction;
-    [SerializeField] private SpeedHandler speedHandler;
-    [SerializeField] private float distanceTravelled;
-
+    
+    private float distanceTravelled;
+    private SpeedHandler speedHandler;
     private WagonHolder wagonHolder;
 
     private void Awake()
     {
         wagonHolder = GetComponent<WagonHolder>();
+        speedHandler = GetComponent<SpeedHandler>();
     }
 
     private void Start()
@@ -30,8 +30,8 @@ public class WagonsMover : MonoBehaviour
         {
             var wagon = wagonHolder.GetWagons()[i];
             var point = distanceTravelled - i * wagonHolder.wagonDistance;
-            var position = pathCreator.path.GetPointAtDistance(point, endOfPathInstruction);
-            var rotation = pathCreator.path.GetRotationAtDistance(point, endOfPathInstruction);
+            var position = pathCreator.path.GetPointAtDistance(point);
+            var rotation = pathCreator.path.GetRotationAtDistance(point);
             wagon.SetPositionAndRotation(position, rotation);
         }
     }
